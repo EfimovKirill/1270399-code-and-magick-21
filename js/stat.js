@@ -80,7 +80,7 @@ window.renderStatistics = function(ctx, names, times) {
       CLOUD_X + BAR_GAP + (BAR_GAP + BAR_WIDTH)*i,
       BAR_Y,
       BAR_WIDTH,
-      -(BAR_HEIGHT*times[i])/maxTime
+      -(BAR_HEIGHT * times[i])/maxTime
     );
   }
 };
