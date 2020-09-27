@@ -1,4 +1,4 @@
-`use strict`;
+'use strict';
 
 const CLOUD_WIDTH = 420;
 const CLOUD_HEIGHT = 270;
@@ -67,12 +67,12 @@ window.renderStatistics = function (ctx, names, times) {
     );
 
     ctx.fillText(
-        Math.round((BAR_HEIGHT*times[i])/maxTime),
+        Math.round((BAR_HEIGHT * times[i]) / maxTime),
         CLOUD_X + BAR_GAP + (BAR_GAP + BAR_WIDTH) * i,
-        GAP * 8 + BAR_HEIGHT -(BAR_HEIGHT*times[i]) / maxTime
+        GAP * 8 + BAR_HEIGHT - (BAR_HEIGHT * times[i]) / maxTime
     );
 
-    ctx.fillStyle = (names[i] == `Вы`) ?
+    ctx.fillStyle = (names[i] === `Вы`) ?
       `rgba(255, 0, 0, 1)` :
       `hsl(225, 80%, ${Math.round(Math.random() * 100)}%)`;
 
