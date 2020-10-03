@@ -1,4 +1,4 @@
-`use strict`;
+'use strict';
 
 let numberOfWizards = 4;
 let wizardNames = [`Иван`, `Хуан Себастьян`, `Мария`, `Кристоф`, `Виктор`, `Юлия`, `Люпита`, `Вашингтон`];
