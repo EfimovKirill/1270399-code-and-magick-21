@@ -1,4 +1,4 @@
-`use strick`;
+`use strict`;
 
 let numberOfWizards = 4;
 let wizardNames = [`Иван`, `Хуан Себастьян`, `Мария`, `Кристоф`, `Виктор`, `Юлия`, `Люпита`, `Вашингтон`];
@@ -15,11 +15,11 @@ userDialog.querySelector(`.setup-similar`).classList.remove(`hidden`);
 let similarListElement = userDialog.querySelector(`.setup-similar-list`);
 let similarWizardTemplate = document.querySelector(`#similar-wizard-template`).content.querySelector(`.setup-similar-item`);
 
-let getRandomNumber = function(min, max) {
+let getRandomNumber = function (min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-let renderWizard = function(wizard) {
+let renderWizard = function (wizard) {
   let wizardElement = similarWizardTemplate.cloneNode(true);
 
   wizardElement.querySelector(`.setup-similar-label`).textContent = wizard.name;
@@ -39,14 +39,8 @@ let renderWizardIdentity = function () {
       eyesColor: wizardEyes[getRandomNumber(0, wizardEyes.length - 1)]
     });
     fragment.appendChild(renderWizard(wizards[i]));
-  };
+  }
   similarListElement.appendChild(fragment);
 };
 
 renderWizardIdentity();
-
-
-
-
-
-
