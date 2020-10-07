@@ -49,14 +49,14 @@ let renderWizardIdentity = function () {
 renderWizardIdentity();
 
 let setupOpen = document.querySelector(`.setup-open`);
-let setupClose = userDialog.querySelector(`.setup-close`);
-let setupUserName = userDialog.querySelector(`.setup-user-name`);
-let wizardCoat = userDialog.querySelector(`.wizard-coat`);
-let wizardEyes = userDialog.querySelector(`.wizard-eyes`);
-let fireballWrap = userDialog.querySelector(`.setup-fireball-wrap`);
-let inputCoatColor = userDialog.querySelector(`input[name="coat-color"]`);
-let inputEyesColor = userDialog.querySelector(`input[name="eyes-color"]`);
-let inputFireballColor = userDialog.querySelector(`input[name="fireball-color"]`);
+let setupClose = document.querySelector(`.setup-close`);
+let setupUserName = document.querySelector(`.setup-user-name`);
+let wizardCoat = document.querySelector(`.wizard-coat`);
+let wizardEyesElement = document.querySelector(`.wizard-eyes`);
+let wizardFireball = document.querySelector(`.setup-fireball-wrap`);
+let inputCoatColor = document.querySelector(`input[name="coat-color"]`);
+let inputEyesColor = document.querySelector(`input[name="eyes-color"]`);
+let inputFireballColor = document.querySelector(`input[name="fireball-color"]`);
 
 let onPopupEscPress = function (evt) {
   if (evt.key === `Escape`) {
@@ -129,7 +129,7 @@ let onCoatClick = function () {
 };
 
 let onEyesClick = function () {
-  wizardEyes.style.fill = wizardEyes[getRandomNumber(0, wizardEyes.length - 1)];
+  wizardEyesElement.style.fill = wizardEyes[getRandomNumber(0, wizardEyes.length - 1)];
   inputEyes.value = wizardEyes[getRandomNumber(0, wizardEyes.length - 1)];
 };
 
@@ -139,5 +139,5 @@ let onFireballClick = function () {
 };
 
 wizardCoat.addEventListener(`click`, onCoatClick);
-wizardEyes.addEventListener(`click`, onEyesClick);
+wizardEyesElement.addEventListener(`click`, onEyesClick);
 wizardFireball.addEventListener(`click`, onFireballClick);
