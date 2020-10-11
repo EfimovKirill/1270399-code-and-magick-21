@@ -1,25 +1,25 @@
 'use strict';
 (function () {
 
-  var userDialog = document.querySelector(`.setup`);
-  var dialogHandle = userDialog.querySelector(`.upload`);
+  let userDialog = document.querySelector(`.setup`);
+  let dialogHandle = userDialog.querySelector(`.upload`);
 
   dialogHandle.addEventListener(`mousedown`, function (evt) {
     evt.preventDefault();
 
-    var startCoords = {
+    let startCoords = {
       x: evt.clientX,
       y: evt.clientY
     };
 
-    var dragged = false;
+    let dragged = false;
 
-    var onMouseMove = function (moveEvt) {
+    let onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
 
       dragged = true;
 
-      var shift = {
+      let shift = {
         x: startCoords.x - moveEvt.clientX,
         y: startCoords.y - moveEvt.clientY
       };
@@ -34,16 +34,16 @@
 
     };
 
-    var onMouseUp = function (upEvt) {
+    let onMouseUp = function (upEvt) {
       upEvt.preventDefault();
 
       document.removeEventListener(`mousemove`, onMouseMove);
       document.removeEventListener(`mouseup`, onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function (clickEvt) {
+        let onClickPreventDefault = function (clickEvt) {
           clickEvt.preventDefault();
-          dialogHandle.removeEventListener(`click`, onClickPreventDefault)
+          dialogHandle.removeEventListener(`click`, onClickPreventDefault);
         };
         dialogHandle.addEventListener(`click`, onClickPreventDefault);
       }
