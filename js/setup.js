@@ -66,6 +66,8 @@ let onPopupEscPress = function (evt) {
 };
 
 let openPopup = function () {
+  userDialog.style.top = `80px`;
+  userDialog.style.left = `50%`;
   userDialog.classList.remove(`hidden`);
 
   document.addEventListener(`keydown`, onPopupEscPress);
