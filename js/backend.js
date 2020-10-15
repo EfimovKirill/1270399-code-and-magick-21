@@ -43,7 +43,7 @@
       } else {
         onError(`Статус ответа: ` + xhr.status + ` ` + xhr.statusText);
       }
-   });
+    });
     xhr.addEventListener(`error`, () => {
       onError(`Произошла ошибка соединения`);
     });

@@ -25,12 +25,12 @@
     };
   };
 
-  let renderWizard = function ({ name, colorCoat, colorEyes }) {
+  let renderWizard = function ( { name, colorCoat, colorEyes } ) {
     let wizardElement = similarWizardTemplate.cloneNode(true);
 
-    wizardElement.querySelector('.setup-similar-label').textContent = name;
-    wizardElement.querySelector('.wizard-coat').style.fill = colorCoat;
-    wizardElement.querySelector('.wizard-eyes').style.fill = colorEyes;
+    wizardElement.querySelector(`.setup-similar-label`).textContent = name;
+    wizardElement.querySelector(`.wizard-coat`).style.fill = colorCoat;
+    wizardElement.querySelector(`.wizard-eyes`).style.fill = colorEyes;
 
     return wizardElement;
   };
@@ -138,18 +138,18 @@
   };
 
   let errorHandler = function (errorMessage) {
-    let element = document.createElement('div');
+    let element = document.createElement(`div`);
 
-    element.style.position = 'absolute';
+    element.style.position = `absolute`;
     element.style.left = 0;
     element.style.right = 0;
     element.style.zIndex = 1;
-    element.style.backgroundColor = 'black';
-    element.style.textAlign = 'center';
-    element.style.fontSize = '15px';
+    element.style.backgroundColor = `black`;
+    element.style.textAlign = `center`;
+    element.style.fontSize = `15px`;
 
     element.textContent = errorMessage;
-    document.body.insertAdjacentElement('afterbegin', element);
+    document.body.insertAdjacentElement(`afterbegin`, element);
   };
 
   window.backend.load(successHandler, errorHandler);
