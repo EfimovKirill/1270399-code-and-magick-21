@@ -25,7 +25,7 @@
     };
   };
 
-  let renderWizard = function ( { name, colorCoat, colorEyes } ) {
+  let renderWizard = function ({name, colorCoat, colorEyes}) {
     let wizardElement = similarWizardTemplate.cloneNode(true);
 
     wizardElement.querySelector(`.setup-similar-label`).textContent = name;
