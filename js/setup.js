@@ -133,7 +133,8 @@
 
   let successHandler = function (wizards) {
     let fragment = document.createDocumentFragment();
-    wizards.slice(0, wizardsCount).forEach(addWizardToFragment(fragment));
+    let randomNumber = getRandomNumber(0, wizards.length - 5);
+    wizards.slice(randomNumber, randomNumber + wizardsCount).forEach(addWizardToFragment(fragment));
     similarListElement.appendChild(fragment);
   };
 
